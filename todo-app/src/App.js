@@ -12,13 +12,9 @@ const App = () => {
          <input type='text'/>
          <button>go</button>
        </form>
-      <ul>
-        <li>learn React
-          <button>edit</button>
-          <button>delete</button>
-        </li>
-
-        <li>learn React
+      <ul className='allTodos'>
+        <li className='singleTodo'>
+          <span className='todoText'>Learn React</span>
           <button>edit</button>
           <button>delete</button>
         </li>
