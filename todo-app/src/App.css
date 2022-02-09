@@ -1,0 +1,48 @@
+.App {
+  min-height:100vh ;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color: #282c34;
+}
+
+.Container{
+  
+  display: flex;
+  height:80vh;
+  border:1px solid grey;
+  padding: 20px;
+  flex-direction: column;
+  align-items: centre;
+  font-size: 20px;
+  color:white;
+
+}
+
+.todoForm{
+  display:flex;
+  justify-content: space-around;
+  width: 450px;
+
+
+}
+
+input{
+  width:80%;
+  padding:10px;
+  border-radius:20px;
+  border:none;
+
+}
+
+button{
+  border:none;
+  padding: 10px;
+  border-radius:  20px;
+  color: #282c34;
+  
+  margin :0 5px;
+
+
+}
