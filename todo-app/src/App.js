@@ -5,9 +5,27 @@ import "./App.css"
 const App = () => {
    const[todo,setTodo]=useState("");
    const[todos,setTodos]= useState([]);
+   const[editId,setEditId]=useState(0);
 
    const handleSumbit=(e)=>{
     e.preventDefault();
+
+    if(editId){
+      const editTodo=todos.find((i)=>i.id===editId);
+      const updateTodos=todos.map((t)=>
+       t.id===editTodo.id
+       ?(t={id:t.id,todo})
+       :{id:t.id,todo:t.todo}
+
+      );
+      setTodo(updateTodos);
+      setEditId(0);
+      setTodo("");
+      return;
+
+
+
+    }
     
     if(todo!==""){
       // setTodos([{ id:`${todo}-${Date.now(),todo}`}]);
@@ -42,7 +60,7 @@ const handleEdit=(id)=>{
          type='text'
          value={todo}
           onChange={(e)=> setTodo(e.target.value)}/>
-         <button type="submit">go</button>
+         <button type="submit">{ editId ? "Edit":"Go"}</button>
        </form>
       <ul className='allTodos'>
         {todos.map((t)=>(
