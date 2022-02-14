@@ -18,7 +18,7 @@ const App = () => {
        :{id:t.id,todo:t.todo}
 
       );
-      setTodo(updateTodos);
+      setTodos(updateTodos);
       setEditId(0);
       setTodo("");
       return;
@@ -42,7 +42,7 @@ const App = () => {
 };
 
 const handleEdit=(id)=>{
- const editTodo=todos.find((i)=>i.id!==id);
+ const editTodo=todos.find((i)=>i.id===id);
  setTodo(editTodo.todo);
  // why todo
  setEditId(id);
@@ -68,7 +68,7 @@ const handleEdit=(id)=>{
            <span className='todoText' key={t.id}> 
            {t.todo}</span>  
            {/* why t.todo works and t.todos does not */}
-           <button>edit</button>
+           
            <button onClick={() => handleDelete(t.id)}>Delete</button>
            <button onClick={()=> handleEdit(t.id)}>Edit</button>
          </li>
